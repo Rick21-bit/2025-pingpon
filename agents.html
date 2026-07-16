@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PingPON - Agent Battle</title>
+  <meta name="description" content="Watch OpenClaw and Hermes agents play ping pong through tool calls." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="brand">PingPON</div>
+    <div>
+      <a href="index.html">Lab</a>
+      <a href="arena.html">Arena</a>
+      <a href="agents.html" class="active">Agents</a>
+      <a href="learn.html">Learn</a>
+    </div>
+  </nav>
+
+  <main class="agent-main">
+    <aside class="agent-log" id="openclaw-log">
+      <h3>🦞 OpenClaw</h3>
+      <div class="log-stream" id="openclaw-stream"></div>
+      <div class="agent-stats">
+        <div class="stat"><h4>Score</h4><p id="leftScore">0</p></div>
+        <div class="stat"><h4>Brain</h4><p id="leftBrain">-</p></div>
+      </div>
+    </aside>
+
+    <div class="agent-canvas-wrap">
+      <div class="agent-badges">
+        <span class="badge openclaw">OpenClaw</span>
+        <span class="vs">vs</span>
+        <span class="badge hermes">Hermes</span>
+      </div>
+      <div class="game-card">
+        <canvas id="game" width="760" height="440"></canvas>
+      </div>
+      <div class="actions agent-actions">
+        <button id="reset">Reset Match</button>
+        <button id="import-brain" class="accent">Import Brain</button>
+        <input type="file" id="brain-file" accept="application/json" style="display:none">
+      </div>
+    </div>
+
+    <aside class="agent-log" id="hermes-log">
+      <h3>◆ Hermes</h3>
+      <div class="log-stream" id="hermes-stream"></div>
+      <div class="agent-stats">
+        <div class="stat"><h4>Score</h4><p id="rightScore">0</p></div>
+        <div class="stat"><h4>Brain</h4><p id="rightBrain">-</p></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    OpenClaw vs Hermes — agents connected via tool calls and shared game state.
+  </footer>
+
+  <script src="src/NeuralNet.js?v=2"></script>
+  <script src="src/Game.js?v=2"></script>
+  <script src="src/Storage.js?v=2"></script>
+  <script src="agents.js?v=2"></script>
+</body>
+</html>

@@ -161,6 +161,97 @@ button.accent:hover { filter: brightness(1.1); }
 
 .learn h1, .arena-help h1 { color: var(--accent); }
 
+/* Agent battle */
+.agent-main {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  gap: 24px;
+  align-items: start;
+}
+
+.agent-log {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+}
+
+.agent-log h3 {
+  margin: 0 0 12px;
+  color: var(--accent);
+}
+
+.log-stream {
+  flex: 1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: #0b0d10;
+  border-radius: 6px;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 420px;
+}
+
+.log-line {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.log-line time {
+  color: var(--accent);
+  margin-right: 6px;
+  opacity: 0.8;
+}
+
+.log-line.success {
+  color: var(--accent-2);
+}
+
+.agent-canvas-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.agent-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.agent-badges .badge {
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.9rem;
+}
+
+.badge.openclaw { background: #22d3ee; color: #000; }
+.badge.hermes { background: #a78bfa; color: #000; }
+.agent-badges .vs { color: var(--muted); }
+
+.agent-actions {
+  justify-content: center;
+}
+
+.agent-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+@media (max-width: 1100px) {
+  .agent-main { grid-template-columns: 1fr; }
+  .agent-log { min-height: 200px; }
+  .log-stream { max-height: 200px; }
+}
+
 footer {
   text-align: center;
   color: var(--muted);

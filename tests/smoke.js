@@ -8,10 +8,12 @@ const root = path.join(__dirname, '..');
 const requiredFiles = [
   'index.html',
   'arena.html',
+  'agents.html',
   'learn.html',
   'style.css',
   'app.js',
   'arena.js',
+  'agents.js',
   'src/NeuralNet.js',
   'src/Game.js',
   'src/Population.js',
